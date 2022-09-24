@@ -1,901 +1,123 @@
 
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta http-equiv="Content-Style-Type" content="text/css">
-    <meta http-equiv="Content-Script-Type" content="text/javascript">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="icon" type="image/png" href="img/app_icon.png" />
+  <head>
+    <title>家庭部落格與論壇 Website Template | WIX</title>
+    
+    <!-- BEGIN SENTRY -->
+    <script id="sentry">
+  (function(c,u,v,n,p,e,z,A,w){function k(a){if(!x){x=!0;var l=u.getElementsByTagName(v)[0],d=u.createElement(v);d.src=A;d.crossorigin="anonymous";d.addEventListener("load",function(){try{c[n]=r;c[p]=t;var b=c[e],d=b.init;b.init=function(a){for(var b in a)Object.prototype.hasOwnProperty.call(a,b)&&(w[b]=a[b]);d(w)};B(a,b)}catch(g){console.error(g)}});l.parentNode.insertBefore(d,l)}}function B(a,l){try{for(var d=m.data,b=0;b<a.length;b++)if("function"===typeof a[b])a[b]();var e=!1,g=c.__SENTRY__;"undefined"!==
+  typeof g&&g.hub&&g.hub.getClient()&&(e=!0);g=!1;for(b=0;b<d.length;b++)if(d[b].f){g=!0;var f=d[b];!1===e&&"init"!==f.f&&l.init();e=!0;l[f.f].apply(l,f.a)}!1===e&&!1===g&&l.init();var h=c[n],k=c[p];for(b=0;b<d.length;b++)d[b].e&&h?h.apply(c,d[b].e):d[b].p&&k&&k.apply(c,[d[b].p])}catch(C){console.error(C)}}for(var f=!0,y=!1,q=0;q<document.scripts.length;q++)if(-1<document.scripts[q].src.indexOf(z)){f="no"!==document.scripts[q].getAttribute("data-lazy");break}var x=!1,h=[],m=function(a){(a.e||a.p||a.f&&
+  -1<a.f.indexOf("capture")||a.f&&-1<a.f.indexOf("showReportDialog"))&&f&&k(h);m.data.push(a)};m.data=[];c[e]=c[e]||{};c[e].onLoad=function(a){h.push(a);f&&!y||k(h)};c[e].forceLoad=function(){y=!0;f&&setTimeout(function(){k(h)})};"init addBreadcrumb captureMessage captureException captureEvent configureScope withScope showReportDialog".split(" ").forEach(function(a){c[e][a]=function(){m({f:a,a:arguments})}});var r=c[n];c[n]=function(a,e,d,b,f){m({e:[].slice.call(arguments)});r&&r.apply(c,arguments)};
+  var t=c[p];c[p]=function(a){m({p:a.reason});t&&t.apply(c,arguments)};f||setTimeout(function(){k(h)})})(window,document,"script","onerror","onunhandledrejection","Sentry","b4e7a2b423b54000ac2058644c76f718","https://static.parastorage.com/unpkg/@sentry/browser@5.27.4/build/bundle.min.js",{"dsn":"https://b4e7a2b423b54000ac2058644c76f718@sentry.wixpress.com/217"});
+  </script>
 
-	
+    <script type="text/javascript">
+    window.Sentry.onLoad(function () {
+      window.Sentry.init({
+        "release": "1.1905.0",
+        "environment": "production",
+        "allowUrls": undefined,
+        "denyUrls": undefined
+});
+      window.Sentry.configureScope(function (scope) {
+        scope.setUser({
+          id: "null-user-id:3673c17f-16e8-4281-8b18-0b1f5598d5cc",
+          clientId: "3673c17f-16e8-4281-8b18-0b1f5598d5cc",
+        });
+        scope.setExtra("user.authenticated", false);
+        scope.setExtra("sessionId", "185a356b-29a4-46f3-821a-b087e013d359");
+      });
+    });
+    </script>
+    <!-- END SENTRY -->
+    <script type="text/javascript">
+        var initialTime = new Date().getTime();
+      (function () {
+        var appName = 'marketing-template-viewer';
+        window.appStartLoadTime = window.performance && window.performance.now();
+        window.fedops = window.fedops || {};
+        window.fedops.apps = window.fedops.apps || {};
+        window.fedops.apps[appName] = { startLoadTime: window.appStartLoadTime };
+        try { window.fedops.sessionId = window.localStorage.getItem('fedops.logger.sessionId'); } catch(e) {};
+        window.fedops.sessionId = window.fedops.sessionId || 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8); return v.toString(16); });
+        (new Image()).src = '//frog.wix.com/fed?appName=' + appName + '&src=72&evid=14&session_id=' + window.fedops.sessionId;
+      })();
+    </script>
+    <script src="https://static.parastorage.com/polyfill/v3/polyfill.min.js?features=default,es6,es7,es2017,es2018,es2019,fetch&flags=gated&unknown=polyfill"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <link type="image/x-icon" href="//www.wix.com/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="https://static.parastorage.com/services/third-party/fonts/Helvetica/fontFace.css">
+    <link rel="stylesheet" href="https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/madefor.min.css">
+    <link rel="stylesheet" href="https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/madeforDisplay.min.css">
+    <link rel="stylesheet" href="//static.parastorage.com/services/marketing-template-viewer/1.1905.0/app.min.css">
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="icon" type="image/png" href="/img/app_icon.png" />
+    <meta name="description" content="這個簡潔、迷人的範本適合想要與一樣忙碌的雙親連線的媽媽。無論您想要分享技能 或想要尋求育嬰技巧和建議，都可以善加利用這個能輕鬆編輯的範本滿足所有需求。只要點選編輯就可開始進行！">
+    <meta name="author" content="Wixpress">
+    <meta http-equiv="content-language" content="zh"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 
-	<title>2022國家地理臺灣攝影大賽</title>
+    <meta property="og:title" content="家庭部落格與論壇 Website Template | WIX"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://zh.wix.com/website-template/view/html/2139"/>
+    <meta property="og:image" content="//static.wixstatic.com/media//templates/image/182529d5d5a11ae8e4bc5792ce52debcfea3c918477c3b1686a2db259013aff01628611082544.jpg"/>
+    <meta content="Wix" property="og:site_name">
+    <meta property="og:description" content="這個簡潔、迷人的範本適合想要與一樣忙碌的雙親連線的媽媽。無論您想要分享技能 或想要尋求育嬰技巧和建議，都可以善加利用這個能輕鬆編輯的範本滿足所有需求。只要點選編輯就可開始進行！"/>
+    <meta property="fb:admins" content="731184828"/>
+    <meta name="fb:app_id" content="236335823061286"/>
+    <meta name="google-site-verification" content="QXhlrY-V2PWOmnGUb8no0L-fKzG48uJ5ozW0ukU7Rpo"/>
 
-	<meta property="fb:app_id" content="346532949277691"/>
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://www.natgeomedia.com/photocontest/index.asp" />
-	<meta property="og:site_name" content="國家地理雜誌中文網" />
-	<meta property="og:title" content="2022國家地理臺灣攝影大賽"/>
-	<meta property="og:description" content="從每一種可能的角度 觀看臺灣之美" />
-	<meta property="og:image" content="https://www.natgeomedia.com/photocontest/img/share-fb-2022extend.jpg" />
-	<meta property="og:image:width" content="1200">
-	<meta property="og:image:height" content="630">
+    <link rel="canonical" href="https://zh.wix.com/website-template/view/html/2139"/>
 
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="2022國家地理臺灣攝影大賽" />
-	<meta name="twitter:description" content="從每一種可能的角度 觀看臺灣之美" />
-	<meta name="twitter:image" content="https://www.natgeomedia.com/photocontest/img/share-fb-2022extend.jpg" />
+    <link rel="alternate" hreflang="fr" href="https://fr.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="pt" href="https://pt.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="cs" href="https://cs.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="it" href="https://it.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="nl" href="https://nl.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="ko" href="https://ko.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="de" href="https://de.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="ru" href="https://ru.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="sv" href="https://sv.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="tr" href="https://tr.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="da" href="https://da.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="en" href="https://www.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="es" href="https://es.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="hi" href="https://hi.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="ja" href="https://ja.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="no" href="https://no.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="pl" href="https://pl.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="vi" href="https://vi.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="uk" href="https://uk.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="zh" href="https://zh.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="th" href="https://th.wix.com/website-template/view/html/2139"/>
+    <link rel="alternate" hreflang="x-default" href="https://www.wix.com/website-template/view/html/2139" />
 
-	<meta name="Title" content="2022國家地理臺灣攝影大賽" />
-	<meta name="keywords" content="2022國家地理臺灣攝影大賽,國家地理臺灣攝影大賽,臺灣攝影大賽,2022攝影大賽,國家地理頻道,國家地理雜誌" />
-	<meta name="description" content="從每一種可能的角度 觀看臺灣之美" />
-	<link rel="image_src" href="https://www.natgeomedia.com/photocontest/img/share-fb-2022extend.jpg" />
+  </head>
+  <body>
+    <script src="//static.parastorage.com/services/cookie-sync-service/1.282.0/embed-cidx.bundle.min.js"></script>
+    <script src="//static.parastorage.com/services/tag-manager-client/1.427.0/hostTags.bundle.min.js"></script>
+    <div id="root"><div data-hook="app"><div data-hook="tool-bar" class="sbWfkE"><div class="Mn4893"><a data-hook="logo" href="https://www.wix.com" class="nHuSJZ"><span class="AV8G6s">wix.com</span></a><div class="RyxoSg"><button data-hook="desktop-view" class="is65hl sdsgLW"><span class="XFdFwl">顯示桌面視圖</span></button><hr class="hS1yv1"/><button data-hook="mobile-view" class="fB70N2"><span class="XFdFwl">顯示行動裝置視圖</span></button></div></div><div class="TYXuEX"><div class="RyxoSg"><p data-hook="tool-bar-title" class="VaexPL">按一下編輯就可製作新奇的個人網站</p><a data-hook="info-view" class="bggdgE" tabindex="0" role="dialog" href="#">進一步了解</a><a class="Ydu4WK" data-hook="editor-link" href="https://manage.wix.com/edit-template/from-intro?originTemplateId=9c138735-d369-4327-a8dc-833438331eea&amp;editorSessionId=8bd64b77-4792-43cb-8c08-ca49353512c2" target="_blank" tabindex="0">編輯這個網站</a></div></div></div><div data-hook="template-demo" class="CJ4D6R"><div data-hook="desktop-view" class="Woz8P7 pLF8IX"><iframe data-hook="desktop-iframe" src="https://www.wix.com/demone2/young-moms-forum" title="家庭部落格與論壇" width="100%" height="100%" class="eZTjsa"></iframe></div></div><div data-hook="info-pop-up" class="M05QSQ"><div class="E0wHmq"><button data-hook="card-close" class="eds_d0"><span class="ydbrSa">關閉資訊快顯視窗</span></button><div class="qLnKwP"><h1 data-hook="card-title" class="PHJvhr">家庭部落格與論壇 - Website Template</h1><div class="CEjC4K"><h3 data-hook="card-good-for-title" class="xqspyG">適用於：</h3><p data-hook="card-good-for" class="gsbPc5">媽媽、準父母、社區領導和陪產員</p></div><div class="CEjC4K"><h3 class="xqspyG">說明：</h3><p data-hook="card-description" class="gsbPc5">這個簡潔、迷人的範本適合想要與一樣忙碌的雙親連線的媽媽。無論您想要分享技能 或想要尋求育嬰技巧和建議，都可以善加利用這個能輕鬆編輯的範本滿足所有需求。只要點選編輯就可開始進行！</p></div></div><div class="KiqsRq"><a data-hook="card-editor-url" class="XpwCp3 sKD7vO" target="_blank" href="https://manage.wix.com/edit-template/from-intro?originTemplateId=9c138735-d369-4327-a8dc-833438331eea&amp;editorSessionId=8bd64b77-4792-43cb-8c08-ca49353512c2">立即編輯</a></div></div></div></div></div>
+    <script>
+      window.__BASEURL__ = "https:\u002F\u002Fzh.wix.com\u002Fwebsite-template\u002Fview\u002Fhtml\u002F";
+      window.__INITIAL_I18N__ = {"locale":"zh","resources":{"errorPage.templatesLinkText":"範本","template.viewer.page.title":"{{- title}} Website Template | WIX","template_button_label":"編輯網站","template_seeFeatures_label":"查看所有功能","template_expand_examples_text":"很適合","template_expand_header":"範本特色","template.viewer.title":"按一下編輯就可製作新奇的個人網站","template.viewer.edit.button":"編輯這個網站","template.viewer.use.button":"Use this template","template.viewer.read.more":"進一步了解","template.viewer.more.info":"More Info","template.viewer.back":"返回","template.viewer.info.edit.button":"立即編輯","template.viewer.price":"價格：","template.viewer.info.title":"{{- title}} - Website Template","template.viewer.info.goodFor":"適用於：","template.viewer.info.description":"說明：","template.viewer.info.desktop.only.notice":"從桌面進入Wix.com來編輯此範本，您可以在其中自訂任何美麗的範本。","template.viewer.see.all.templates":"See All Templates","template.viewer.seeAllExpressions":"See All Expressions","template.viewer.goToBiggerScreen":"Go to a bigger screen to edit.","template.viewer.getStarted":"Get Started","template.viewer.startNow":"Start Now","template.viewer.features":"Features","template.viewer.allFeatures":"All Features","template.viewer.expressions":"Expressions","template.viewer.tutorials":"Tutorials","template.viewer.updatesAndReleases":"Updates & Releases","template.viewer.comingSoon":"Coming soon","template.viewer.academy":"Academy","template.viewer.editTemplate":"編輯範本","template.viewer.theme.default":"Site theme","template.viewer.theme.Dynamic":"Dynamic","template.viewer.theme.Savvy":"Savvy","template.viewer.theme.Vivid":"Vivid","template.viewer.theme.Mature":"Mature","template.viewer.theme.Contemporary":"Contemporary","template.viewer.theme.Laid-back":"Laid-back","template.viewer.theme.Bohemian":"Bohemian","template.viewer.theme.Fashionable":"Fashionable","template.viewer.theme.Technical":"Technical","template.viewer.theme.Energetic":"Energetic","template.viewer.theme.Nostalgic":"Nostalgic","template.viewer.theme.Natural":"Natural","template.viewer.theme.RetroVibrant":"RetroVibrant","template.viewer.theme.Warm":"Warm","template.viewer.theme.Eclectic":"Eclectic","template.viewer.theme.Creamy":"Creamy","template.viewer.theme.Tangy":"Tangy","template.viewer.theme.Placid":"Placid","template.viewer.sidebar.title":"Choose your theme","template.viewer.sidebar.description":"You can change it any time.","template.viewer.sidebar.defaultTheme":"Default theme","template.viewer.sidebar.featuredThemes":"Featured themes","a11y.desktop.button":"顯示桌面視圖","a11y.mobile.button":"顯示行動裝置視圖","a11y.close.popup.button":"關閉資訊快顯視窗","toolbar.tooltip.desktop":"1001 像素或以上","toolbar.tooltip.tablet":"751 至 1000 像素","toolbar.tooltip.mobile":"320 至 750 像素","errorPage.4xx.title":"我們找不到您要搜尋的範本。","errorPage.5xx.title":"我們無法載入範本。","errorPage.subTitle":"錯誤：{{- code }}","errorPage.4xx.details":"嘗試在 \u003Clink\u003E此處\u003C\u002Flink\u003E搜尋其他範本。","errorPage.5xx.details":"我們這邊出現了一個技術問題，導致我們無法載入此頁面。請稍等幾分鐘然後再試一次。","errorPage.5xx.action":"重新整理"}};
+      window.__INITIAL_STATE__ = {"viewMode":"desktop","isInfoShown":false,"isEditButtonHidden":false,"template":{"title":"家庭部落格與論壇","description":"這個簡潔、迷人的範本適合想要與一樣忙碌的雙親連線的媽媽。無論您想要分享技能 或想要尋求育嬰技巧和建議，都可以善加利用這個能輕鬆編輯的範本滿足所有需求。只要點選編輯就可開始進行！","image":"\u002Ftemplates\u002Fimage\u002F182529d5d5a11ae8e4bc5792ce52debcfea3c918477c3b1686a2db259013aff01628611082544.jpg","id":"2139","lng":"zh","price":"免費","docUrl":"https:\u002F\u002Fwww.wix.com\u002Fdemone2\u002Fyoung-moms-forum","editorUrl":"https:\u002F\u002Fmanage.wix.com\u002Fedit-template\u002Ffrom-intro?originTemplateId=9c138735-d369-4327-a8dc-833438331eea&editorSessionId=8bd64b77-4792-43cb-8c08-ca49353512c2","goodFor":"媽媽、準父母、社區領導和陪產員","siteId":"8ce1928a-bf40-4104-a42d-74ce0eec0185","metaSiteId":"9c138735-d369-4327-a8dc-833438331eea","editorSessionId":"8bd64b77-4792-43cb-8c08-ca49353512c2","isResponsive":false,"url":"https:\u002F\u002Fwww.wix.com\u002Fdemone2\u002Fyoung-moms-forum"},"activeExperiments":["TemplateViewerHydrationRender","TemplateViewerCollapsibleSidebar"],"config":{"locale":"zh","dealerCmsTranslationsUrl":"\u002F\u002Fstatic.parastorage.com\u002Fservices\u002Fdealer-cms-translations\u002F1.5998.0\u002F","dealerLightboxUrl":"\u002F\u002Fstatic.parastorage.com\u002Fservices\u002Fdealer-lightbox\u002F2.0.248\u002F"}};
+      window.__BI__ = {"siteId":"8ce1928a-bf40-4104-a42d-74ce0eec0185","originUrl":"https:\u002F\u002Fzh.wix.com\u002Fwebsite\u002Ftemplates\u002Fhtml\u002Fblog\u002Fpersonal-blog","editorSessionId":"8bd64b77-4792-43cb-8c08-ca49353512c2"};
+      window.__BI__.initialTime = initialTime;
+      window.__DEVICE__ = "desktop";
+      window.__CONSENT_POLICY__ = {"essential":true,"functional":true,"analytics":true,"advertising":true,"dataToThirdParty":true};
+    </script>
 
-	
+    <script src="//static.parastorage.com/unpkg/react@18.2.0/umd/react.production.min.js" crossorigin></script>
+    <script src="//static.parastorage.com/unpkg/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="//static.parastorage.com/services/cookie-consent-policy-client/1.717.0/app.bundle.min.js"></script>
 
-	<!-- Google Tag Manager -->
-	<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-PZNPVHG');</script> -->
-	<!-- End Google Tag Manager -->
-
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-48305649-1', 'auto');
-		ga('send', 'pageview');
-
-		setTimeout("ga('send', 'event', '1_seconds', 'read')",1000);
-	</script>
-
-
-    <style type="text/css">
-    	.lang-zh{
-    		display: inline;
-    	}
-    	.lang-en{
-    		display: none;
-    	}
-    </style>
-    <script type="text/javascript">var PageLang='zh';</script>
+    
+      <script src="//static.parastorage.com/services/dealer-lightbox/2.0.248/dealer-lightbox.bundle.min.js"></script>
     
 
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1834127253460806');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1834127253460806&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-
-<!-- Global site tag (gtag.js) - Google Ads: 300399940 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-300399940"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-300399940');
-</script>
-
-<script>
-function gtag_report_conversion(url) {
-	
-  fbq('track', 'SubmitApplication');
-
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-300399940/Cj1cCMf9zo8DEMT6no8B',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-
-
-    <!-- font -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-    
-    <!-- plugin layout -->
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/adminlte/plugins/hint/hint.min.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/font_geograph.css">
-    
-    <!-- swiper style -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-    <!-- custom layout -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/layout.css?v4">
-    
-    <!-- basic js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-	<script src="js/loading.js"></script>
-
-	<style>
-	/*for ie9*/
-	:root .kv-bg { position: absolute; }
-
-	/*for ie10 、 ie11*/
-	@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none){
-		.kv-bg {
-			position: absolute;
-		}
-	}
-	</style>
-
-</head>
-
-<body>
-
-	<!-- londing -->
-	<div class="progress" id="progress">
-		<div class="progress-inner">
-			<span class="progress-bar"></span>
-			<span class="progress-logo">
-				<img src="img/loading_2022.svg" width="280" height="280">
-			</span>
-		</div>
-	</div>
-	<!-- end londing -->
-
-	
-
-	<!-- navigation -->
-	<nav class="index-nav">
-	
-		<!-- logo -->
-        <div class="contest-logo">
-            <a href="index.asp">
-				<img src="img/logo_2022tpc.svg" alt="國家地理臺灣攝影大賽 2022 Taiwan Photo Contest">
-            </a>
-        </div>
-		
-        <!-- icons -->
-        <div class="nav-icons-container">
-
-			<!-- language -->
-			<!-- <div class="nav-icons icon-lang">
-				<select id="chg-lang">
-					<option value="zh" selected>中文</option>
-					<option value="en">EN</option>
-				</select>
-			</div> -->
-
-            <!-- menu btn -->
-            <div class="nav-icons icon-menu">
-                MENU
-                <a href="javascript:void(0);"></a>
-            </div>
-    
-            <!-- user btn -->
-            <div class="nav-icons icon-user">
-                <img src="img/icon-user.svg">
-                <a href="javascript:void(0);"></a>
-                
-                <div class="user-data login">
-    
-                    <div class="user-log">
-                        <div class="cube-btn yellow short-width logout-btn">
-                            <span class="lang-zh">登入</span>
-                            <span class="lang-en">Login</span>
-                            <a href="login.asp"></a>
-                        </div>
-                    </div>
-    
-                </div>
-                
-            </div>
-    
-            <!-- upload btn -->
-            <div class="nav-icons upload-btn">
-                作品提交
-                <a href="javascript:gtag_report_conversion('photo-submission.asp');"></a>
-            </div>
-
-            <!-- event countdown -->
-            <!-- <div class="nav-icons countdown-timer">
-                
-                <ul id="countdown">
-                    <li id="dayss">
-                      <div class="number">00</div>
-                      <div class="label">天</div>
-                    </li>
-                    <li id="hourss">
-                      <div class="number">00</div>
-                      <div class="label">時</div>
-                    </li>
-                    <li id="minutess">
-                      <div class="number">00</div>
-                      <div class="label">分</div>
-                    </li>
-                    <li id="secondss">
-                      <div class="number">00</div>
-                      <div class="label">秒</div>
-                    </li>
-                </ul>
-                <div class="countdown-note">徵件截止日期倒數</div>
-            </div> -->
-    
-        </div>
-		
-        <!-- side menu -->
-        <div class="menu">
-            <ul>
-                <li><a href="index.asp">主頁</span></li>
-                <li><a href="https://www.natgeomedia.com/marketing/article/content-14759.html" target="_blank">最新消息</li>
-                <li><a href="photo-submission.asp">作品提交</li>
-                <li><a href="how-to-enter.asp">大賽規則</li>
-                <li><a href="prizes_concept.asp">生態永續特別獎</li>
-                <li><a href="prizes.asp">獎項介紹</li>
-                <li><a href="shortlist.asp">入圍作品</a></li>
-                <li><a href="winner.asp">得獎作品</li>
-                <!-- <li>
-                    <a class="comingsoon" href="javascript:void(0);">入圍名單 <i class="fas fa-lock"></i></a>
-                </li> -->
-                <!-- <li><a href="https://www.natgeomedia.com/photocontest/2019/winners.html" target="_blank">2019 得獎作品</li> -->
-            </ul>
-    
-            <!-- share -->
-            <div class="menu-share">
-
-                <div class="share-icon share-title">Share: </div>
-                
-                <!-- fb-share -->
-                <div class="share-icon fb-share linkshare-fb" data-shareurl="https://www.natgeomedia.com/photocontest/">
-                    <a href="javascript:void(0);">
-                        <div class="icon-container fb-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </div>
-                    </a>
-                </div>
-    
-                <!-- line-share -->
-                <div class="share-icon line-share linkshare-line">
-                    <a href="javascript:void(0);">
-                        <div class="icon-container line-icon">
-                            <i class="fab fa-line"></i>
-                        </div>
-                    </a>
-                </div>
-    
-            </div>
-		</div>
-		
-	</nav>
-
-
-		
-	<header class="index-header">
-
-		<div class="kv-bg">
-			<!-- 01 -->
-			<div class="kv-img kv-img-1">
-				<img class="kv-desktop" src="img/kv-1.jpg?v=2" alt="">
-				<img class="kv-mobile" src="img/kv-1_mobile.jpg?v=2" alt="">
-
-				<div class="svgWrap">
-					<img src="img/grid_bg.svg" class="grid_bg pc">
-					<img src="img/grid_bg_mo.png" class="grid_bg mobile">
-				</div>
-				<p class="kv-author">2019自然主題 冠軍<br>通往雲層入口 ／陳朝宇</p>
-			</div>
-
-			<!-- 02 -->
-			<div class="kv-img kv-img-2">
-				<img class="kv-desktop" src="img/kv-2.jpg" alt="">
-				<img class="kv-mobile" src="img/kv-2_mobile.jpg" alt="">
-				
-				<div class="svgWrap">
-					<img src="img/grid_bg.svg" class="grid_bg pc">
-					<img src="img/grid_bg_mo.png" class="grid_bg mobile">
-				</div>
-				<p class="kv-author">2019青少年組 亞軍<br>淚中之愛/黃孝擎</p>
-			</div>
-
-			<!-- 03 -->
-			<div class="kv-img kv-img-3">
-				<img class="kv-desktop" src="img/kv-3.jpg">
-				<img class="kv-mobile" src="img/kv-3_mobile.jpg">
-
-				<div class="svgWrap">
-					<img src="img/grid_bg.svg" class="grid_bg pc">
-					<img src="img/grid_bg_mo.png" class="grid_bg mobile">
-				</div>
-				<p class="kv-author">2019自然主題 亞軍<br>青山小蝸/馬薈阜</p>
-			</div>
-
-			<!-- 04 -->
-			<div class="kv-img kv-img-4">
-				<img class="kv-desktop" src="img/kv-4.jpg">
-				<img class="kv-mobile" src="img/kv-4_mobile.jpg">
-
-				<div class="svgWrap">
-					<img src="img/grid_bg.svg" class="grid_bg pc">
-					<img src="img/grid_bg_mo.png" class="grid_bg mobile">
-				</div>
-				<p class="kv-author">2019圖片故事主題 冠軍<br>八家將傳奇/方梓勳</p>
-			</div>
-
-			<!-- 05 -->
-			<div class="kv-img kv-img-5">
-				<img class="kv-desktop" src="img/kv-5.jpg?v=2">
-				<img class="kv-mobile" src="img/kv-5_mobile.jpg?v=2">
-
-				<div class="svgWrap">
-					<img src="img/grid_bg.svg" class="grid_bg pc">
-					<img src="img/grid_bg_mo.png" class="grid_bg mobile">
-				</div>
-				<p class="kv-author">2018自然主題 冠軍<br>飛 vs. 躍／吳焄雯</p>
-			</div>
-		</div>
-
-		<div class="h1">
-			<img src="img/logo_2022tpc.svg" alt="國家地理臺灣攝影大賽 2022 Taiwan Photo Contest" class="event-logo">
-			<h1>從每一種可能的角度<br>觀看臺灣之美</h1>
-			<p>以觸動人心的影像，述說臺灣人文、生態、地景的故事。</p>
-
-			<div class="main-sponsor">
-				<span>
-					主辦單位<br>
-					<img src="img/logo_ng_w.svg" alt="國家地理雜誌" class="main-host-logo">	
-				</span>
-				<span>
-					主要贊助<br>
-					<a href="https://www.wistron-foundation.org/zh-Hant/" target="_blank">
-						<img src="img/logo_wistron.svg" alt="Wistron緯創" class="main-sponsor-logo">
-					</a>
-				</span>
-			</div>
-		</div>
-
-	</header>
-
-	<!-- Workshop -->
-	<section class="index-workshop">
-		
-		<div class="workshop-figure"></div>
-		<div class="workshop-event">
-
-			<h4>國家地理攝影論壇</h4>
-			<p class="sub-title">記錄世界的先鋒者，攝影師們相遇之地</p>
-			<div class="video-list-wrap">
-				
-				<div class="video-list">
-					<div class="headline">
-						<p>攝影大賽序幕訪談</p>
-						<p class="host">主辦單位、贊助單位、各界貴賓</p>
-						<p>Part1: 臨空俯視環境與生態</p>
-						<p class="host">國家地理空拍大師 George Steinmetz</p>
-					</div>
-	
-					<div class="right">
-						<!-- btn -->
-						<div class="cube-btn yellow center">
-							點擊觀看
-							<a onclick="fbq('trackCustom', 'ClickSubmit');" href="https://youtu.be/_71dRe6zIYY" target="_blank"></a>
-						</div>
-					</div>
-				</div>
-
-				<div class="video-list">
-					<div class="headline">
-						<p>Part2: 生態攝影與生態永續</p>
-						<p class="host">臺灣環境紀錄導演  柯金源<br>
-							緯創人文基金會執行長 周文玲
-						</p>
-					</div>
-	
-					<div class="right">
-						<!-- btn -->
-						<div class="cube-btn yellow center">
-							點擊觀看
-							<a onclick="fbq('trackCustom', 'ClickSubmit');" href="https://youtu.be/0N_IEY1OBis" target="_blank"></a>
-						</div>
-					</div>
-				</div>
-
-				<div class="video-list">
-					<div class="headline">
-						<p>Part3: 潛入海平面下的世界</p>
-						<p class="host">國際知名水下攝影師 Yorko Summer</p>
-					</div>
-	
-					<div class="right">
-						<!-- btn -->
-						<div class="cube-btn yellow center">
-							點擊觀看
-							<a onclick="fbq('trackCustom', 'ClickSubmit');" href="https://youtu.be/J7lmuyi6qlo" target="_blank"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-
-	</section>
-	
-	<!-- About -->
-	<section class="index-about">
-		<div class="screen-container">
-
-			<div class="index-title">
-				<h3>徵件期間</h3>
-			</div>
-			<p>2022年1月17日 至 2022年4月15日 中午12:00止</p>
-			<!-- btn -->
-			<div class="cube-btn black-border">
-				大賽規則
-				<a href="how-to-enter.asp"></a>
-			</div>
-
-		</div>
-	</section>
-	
-	
-	<!-- Group -->
-	<section class="index-info">
-
-		<div class="index-title">
-			<h3>參賽組別</h3>
-		</div>
-		
-		<!-- Full box images -->
-		<div class="index-box-wrap">
-			
-			<div class="left-group">
-
-				<div class="group-circle adult">
-					<p>成人組</p>
-					<p>NT$ 300/人</p>
-					<p>徵件截止當日(2022/4/15)，年滿20歲即可參賽</p>
-					<p>每人可同時參加4個主題，同一作品只能參加一個主題。</p>
-				</div>
-
-				<div class="group-box">
-					<span>
-						<h4>人物</h4>
-						<p>人物特寫，呈現臺灣精神與特色的人和事 (限1件作品)</p>
-					</span>
-				</div>
-
-				<div class="group-box">
-					<span>
-						<h4>地方</h4>
-						<p>展現臺灣城市、郊區、鄉間以及各角落的地方影像 (限1件作品)</p>
-					</span>
-				</div>
-
-				<div class="group-box">
-					<span>
-						<h4>自然</h4>
-						<p>記錄臺灣自然傑作、觀看臺灣之美 (限1件作品)</p>
-					</span>
-				</div>
-				
-				<div class="group-box">
-					<span>
-						<h4>生態永續</h4>
-						<p>5張照片為一組作品，述說臺灣生態永續的故事</p>
-					</span>
-				</div>
-			</div>
-
-			<div class="right-group-box">
-
-				<div class="group-circle teenager">
-					<p>青少年組</p>
-					<p>NT$ 200/人</p>
-					<p>徵件截止當日(2022/4/15)，未滿20歲者參賽。</p>
-					<p>不限主題，每人最多提交3件作品。</p>
-				</div>
-
-				<span>
-					<h4>不限主題</h4>
-					<p>活力與創新的攝影種子，培養探索臺灣的心</p>
-				</span>
-			</div>
-			
-		</div>
-
-		<!-- Apply step intro-->
-		<div class="index-step-all">
-			<div class="screen-container">
-
-				<div class="step-warp">
-					
-					<div class="step-box">
-						<img src="img/index-step1.png" alt="步驟1.建立帳號">
-						建立攝影大賽帳號、密碼、個人報名資料，徵件截止前登入提交作品。
-					</div>
-					<div class="step-arrow"></div>
-					
-					<div class="step-box">
-						<img src="img/index-step2.png" alt="步驟2.繳費">
-						提供線上信用卡繳費或超商繳費服務。
-					</div>
-					
-					<div class="step-arrow"></div>
-	
-					<div class="step-box">
-						<img src="img/index-step3.png" alt="步驟3.上傳作品">
-						系統確認繳費完成後，可重新登入帳號開始上傳作品。
-					</div>
-
-					<div class="step-action">
-						<!-- btn -->
-						<div class="cube-btn yellow">
-							立即參賽
-							<a href="javascript:gtag_report_conversion('photo-submission.asp');"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</section>
-	
-	<!-- News -->
-	<section class="index-news">
-		
-		<div class="index-title2">
-			<h3>系列報導</h3>
-		</div>
-		<div class="screen-container">
-			<div class="news-wrap">
-				
-				<!-- 04 -->
-				<div class="news-card">
-					<div class="cover">
-						<img src="img/news/news04.jpg" alt="國家地理攝影論壇線上首播">
-					</div>
-					<div class="caption">國家地理攝影論壇線上首播　<span>從攝影美學感知臺灣生態脈動</span></div>
-					<div class="more">MORE</div>
-					<div class="day">FEB<span> 23</span></div>
-					<a href="https://www.natgeomedia.com/marketing/article/content-14914.html" target="_blank"></a>
-				</div>
-				
-				<!-- 01 -->
-				<div class="news-card">
-					<div class="cover">
-						<img src="img/news/news01.jpg?v=2" alt="2022國家地理臺灣攝影大賽1月17日起徵件">
-					</div>
-					<div class="caption">2022國家地理臺灣攝影大賽1月17日起徵件</div>
-					<div class="more">MORE</div>
-					<div class="day">Dec<span>17</span></div>
-					<a href="https://www.natgeomedia.com/marketing/article/content-14759.html" target="_blank"></a>
-				</div>
-
-				<!-- 02 -->
-				<div class="news-card">
-					<div class="cover">
-						<img src="img/news/news02.jpg" alt="2021國家地理攝影大賽新聞稿">
-					</div>
-					<div class="caption">2019國家地理全球攝影大賽得獎的是...</div>
-					<div class="more">MORE</div>
-					<div class="day">Nov<span>22</span></div>
-					<a href="https://www.natgeomedia.com/history/article/content-9973.html" target="_blank"></a>
-				</div>
-
-				<!-- 03 -->
-				<!-- <div class="news-card">
-					<div class="cover">
-						<img src="img/news/news03.jpg" alt="2021國家地理攝影大賽新聞稿">
-					</div>
-					<div class="caption">2018國家地理全球攝影大賽冠軍作品賞析</div>
-					<div class="more">MORE</div>
-					<div class="day">Nov<span>30</span></div>
-					<a href="https://www.natgeomedia.com/environment/gallery/content-3862.html" target="_blank"></a>
-				</div> -->
-				
-			</div>
-		</div>
-
-	</section>
-
-
-	
-
-
-
-    <!-- sponsor -->
-    <section class="sponsor">
-		<div class="screen-container sponsor-container">
-
-			<div class="sponsor-title">
-				<h3>主要贊助</h3>
-			</div>
-
-			<div class="sponsor-logos">
-				<ul>
-					<li>
-						<img src="img/logo_wistron.svg" alt="Wistron緯創" class="sp-wistron">
-						<a href="https://www.wistron-foundation.org/zh-Hant/" target="_blank"></a>
-					</li>
-				</ul>
-			</div>
-
-
-			<div class="sponsor-title">
-				<h3>合作夥伴</h3>
-			</div>
-
-			<div class="sponsor-logos">
-				<ul>
-					<li>
-						<img class="adjust" src="img/sponsor/logo_cs.svg" alt="正成集團影視器材總匯">
-						<a href="https://www.csemart.com/" target="_blank"></a>
-					</li>
-
-					<li>
-						<img src="img/sponsor/logo_arcteryx.svg" alt="始祖鳥">
-						<a href="https://www.arcteryx.com.tw/?utm_source=natgeo&utm_medium=eventweb&utm_campaign=photocontest" target="_blank"></a>
-					</li>
-
-					<li>
-						<img src="img/sponsor/logo_victorinox.svg" alt="瑞士維仕">
-						<a href="https://www.victorinox.com/tw/zh" target="_blank"></a>
-					</li>
-
-					<li>
-						<img src="img/sponsor/logo_asus.png" alt="ASUS">
-						<a href="https://www.asus.com/tw/Mobile/Phones/ZenFone/Zenfone-8/" target="_blank"></a>
-					</li>
-
-					<li>
-						<img src="img/sponsor/logo_lakeshore.svg" alt="煙波大飯店">
-						<a href="https://lihi1.com/vJkNC" target="_blank"></a>
-					</li>
-				</ul>
-			</div>
-
-		</div>
-	</section>
-
-
-	<!-- footer -->
-	<footer>
-		<div class="footer-container">
-			<!-- logos -->
-			<div class="footer-logos">
-				<!-- ng -->
-				<div class="footer-ng">
-					<a href="https://www.natgeomedia.com/" target="_blank">
-						<img src="img/ng-logo-w.svg" alt="National Geographic">
-					</a>
-				</div>
-
-				<!-- boulder  -->
-				<div class="footer-boulder">
-					<a href="https://www.pcstore.com.tw/natgeomedia/" target="_blank">
-						<img src="img/logo_bouldermedia_w.svg" alt="Boulder Media">
-					</a>
-				</div>
-			</div>
-
-			<!-- social -->
-			<div class="footer-social">
-				<div class="footer-social-text">Follow Us</div>
-				<div class="footer-social-icons">
-					<!-- fb -->
-					<div class="footer-icon">
-						<a href="https://www.facebook.com/natgeomedia" target="_blank">
-							<i class="fab fa-facebook-square"></i>
-						</a>
-					</div>
-
-					<!-- ig -->
-					<div class="footer-icon">
-						<a href="https://www.instagram.com/natgeo.media/" target="_blank">
-							<i class="fab fa-instagram"></i>
-						</a>
-					</div>
-					
-					<!-- yt -->
-					<div class="footer-icon">
-						<a href="https://www.youtube.com/channel/UCtmb2nQhbT2rxxpmbdRjvVg" target="_blank">
-							<i class="fab fa-youtube"></i>
-						</a>
-					</div>
-
-					<!-- telegram -->
-					<div class="footer-icon">
-						<a href="https://t.me/natgeomedia" target="_blank">
-							<i class="fab fa-telegram-plane"></i>
-						</a>
-					</div>
-					
-				</div>
-			</div>
-
-		</div>
-
-		<div class="footer-copyright">
-			<div class="copyright-container">
-				<div class="copyright-text">
-					活動報名洽詢服務：防疫期間客服遠端工作，請多加利用email，謝謝。 <br>
-					客服電話：02-7717-9258 分機114 (週一至週五10:00-16:00) &nbsp;
-					客服信箱：<a href="mailto:photo@natgeomedia.com" target="_blank">photo@natgeomedia.com</a><br>
-
-					© 2022 Boulder Media Inc, Taiwan / National Geographic.  <!-- &nbsp; |  &nbsp;
-					<a href="404.asp">大賽規則</a>	 -->
-				</div>
-			</div>
-		</div>
-	</footer>
-	
-
-	<!--top-->
-	<div id="gotop">
-		<i class="fas fa-arrow-up"></i>
-	</div>
-
-
-	<script type="text/javascript">
-	$('#chg-lang').change(function(){
-		var $thisLang=$(this).val();
-		if($thisLang=='zh'){
-			var $hideLang='en';
-			var $showLang='zh';
-		}else{
-			var $hideLang='zh';
-			var $showLang='en';
-		}
-		$('.lang-'+$hideLang).hide();
-		$('.lang-'+$showLang).show();
-
-		PageLang=$showLang;
-
-		$.ajax({
-			type:"GET",
-			url:'chg-lang.asp',
-			data:{lang:$showLang}
-		});
-	});
-	</script>
-
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-48305649-12"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-48305649-12');
-</script>
-
-
-
-	<!-- popup -->
-	<div class="popup-index">
-		<div class="popup-index-container">
-			<div class="popup-index-content">
-				<h2><i class="fas fa-info-circle"></i></h2>
-				<h4 style="text-align:center; font-size: 1.8em;">重要公告</h4>
-				<p style="font-weight: 500; margin-top: 20px;">
-					得獎作品已於7/4公告，詳情請見「得獎作品」頁，主辦單位將陸續聯繫得獎者。
-				</p>
-				<p></p>
-				<br>
-				<!-- <div class="popup-index-btn">知道了</div> -->
-
-				<a href="winner.asp" target="_blank">
-					<div class="popup-index-btn">得獎作品</div>
-				</a> 
-			</div>
-		</div>
-	</div>
-
-	<!-- <div class="popup-index">
-		<div class="popup-index-container">
-			<div class="popup-index-content">
-				<h2><i class="fas fa-info-circle"></i></h2>
-				<h4 style="text-align:center; font-size: 1.8em;">重要公告</h4>
-				<p>
-					本屆大賽將於5月中旬公告入圍作品。優勝者於7月上旬公告。請隨時關注大賽官網或國家地理雜誌Facebook粉專。
-				</p>
-				<br>
-				<br>
-				<div class="popup-index-btn">知道了</div>
-			</div>
-		</div>
-	</div> -->
-
-
-    <!-- swiper news-->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-	<script src="js/main.js?v=20220308"></script>
-	<script src="js/index.js?v=20201207_ver2"></script>
-	<script src="/adminlte/plugins/clipboard/clipboard.min.js"></script>
-	<script src="js/social-share.js" type="text/javascript"></script>
-	<script src="js/popup-info.js"></script>
-
-
-
-<!-- Google Tag Manager (noscript) -->
-<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZNPVHG"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-<!-- End Google Tag Manager (noscript) -->
-
-
-<!-- Google Analytics -->
-<!-- <script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-48305649-1', 'auto');
-	ga('send', 'pageview');
-
-	setTimeout("ga('send', 'event', '1_seconds', 'read')",1000);
-</script> -->
-
-
-<!-- 20190403 comScore Tag Add to GTM -->
-<!-- Begin comScore Tag -->
-	<script>
-		var _comscore = _comscore || [];
-		_comscore.push({ c1: "2", c2: "27163232" });
-		(function() {
-			var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
-			s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
-			el.parentNode.insertBefore(s, el);
-		})();
-	</script>
-	<noscript>
-		<img src="https://sb.scorecardresearch.com/p?c1=2&c2=27163232&cv=2.0&cj=1" />
-	</noscript>
-<!-- End comScore Tag -->
-
-
-<!-- 20190403 Facebook Pixel Add to GTM -->
-<!-- Facebook Pixel Code -->
-	<script>
-	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-	fbq('init', '279214589239037'); 
-	fbq('track', 'PageView');
-	</script>
-
-	<noscript>
-		<img height="1" width="1" src="https://www.facebook.com/tr?id=279214589239037&ev=PageView&noscript=1"/>
-	</noscript>
-<!-- End Facebook Pixel Code -->
-
-
-	
-</body>
+    <script src="//static.parastorage.com/services/marketing-template-viewer/1.1905.0/app.bundle.min.js"></script>
+  </body>
 </html>
